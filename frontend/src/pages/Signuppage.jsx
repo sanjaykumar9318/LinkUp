@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuthStore from "../store/useAuthStore.js";
 import AuthImagePattern from "../components/AuthImagePattern.jsx";
+import toast from "react-hot-toast"
 
 import {
   Eye,
@@ -20,12 +21,30 @@ const Signuppage = () => {
     email: "",
     password: "",
   });
+  const validateForm = () => {
+    if (!formData.fullname.trim()) {
+      toast.error("Please enter your full name.");
+    }
+    if (!formData.email.trim()) {
+      toast.error("Please enter your email.");
+    }
+    if (!formData.password.trim()) {
+      toast.error("Please enter your password.");
+    }
+    if (!/\S+@\S+\.\S+/.test(formData.email))
+      return toast.error("Invalid email format");
+    if (!formData.password) return toast.error("Password is required");
+    if (formData.password.length < 6)
+      return toast.error("Password must be at least 6 characters");
+    return true;
+  };
 
   const { signup, isSigningUp } = useAuthStore();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(formData);
+    const success = validateForm();
+    if (success == true) signup(formData);
   };
 
   return (

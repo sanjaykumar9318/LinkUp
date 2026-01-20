@@ -3,6 +3,7 @@ import {Loader} from "lucide-react"
 import { Routes, Route ,Navigate} from "react-router-dom";
 import useAuthStore from "./store/useAuthStore"
 import Navbar from "./components/Navbar";
+import {Toaster} from "react-hot-toast"
 
 import Homepage from "./pages/Homepage";
 import Loginpage from "./pages/Loginpage";
@@ -31,6 +32,7 @@ function App() {
         <Route path="/profile" element={authUser ? <Profilepage />:<Navigate to="/login"/>}/>
         <Route path="/settings" element={<Settingspage />} />
       </Routes>
+      <Toaster />
     </>
   );
 }
