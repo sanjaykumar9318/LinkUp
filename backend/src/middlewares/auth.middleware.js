@@ -12,7 +12,7 @@ import User from "../models/user.model.js"
             res.status(401).json({message:"unauthorized: invalid token"})
         }
 
-        const user = User.findById(decode.userId).select("-password")
+        const user = await User.findById(decode.userId).select("-password")
         if(!user){
             res.status(404).json({message:"user not found"})
         }
