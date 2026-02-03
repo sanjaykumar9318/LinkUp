@@ -9,6 +9,7 @@ const useAuthStore = create((set)=>({
     isSigningUp:false,
     isLoggingIn:false,
     isUpdatingProfile:false,
+    onlineUsers :[],
     checkAuth: async () => {
     try {
     const res = await axiosInstance.get("/auth/check");
@@ -61,8 +62,8 @@ const useAuthStore = create((set)=>({
     } finally {
       set({ isLoggingIn: false });
     }
-  },
-  updateProfile: async(data)=>{
+    },
+    updateProfile: async(data)=>{
 
     set({isUpdatingProfile:true})
     set({ isUpdatingProfile: true });
@@ -76,7 +77,7 @@ const useAuthStore = create((set)=>({
     } finally {
       set({ isUpdatingProfile: false });
     }
-  }
+    }
 
 }))
 

@@ -18,7 +18,7 @@ app.use(cors({
 }));
 
 app.use("/api/auth",authroutes)
-app.use("/api/message",messageroutes)
+app.use("/api/messages",messageroutes)
 
 
 app.listen(5001,()=>{
