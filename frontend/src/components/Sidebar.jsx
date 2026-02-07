@@ -12,7 +12,7 @@ const Sidebar = () => {
   useEffect(() => {
     getUsers();
   }, [getUsers]);
-  if (!isUserLoading) return <SidebarSkeleton />;
+  if (isUserLoading) return <SidebarSkeleton />;
 
 //   const filteredusers = users.filter((user) => user._id !== selectedUser?._id);
   return (
@@ -41,21 +41,21 @@ const Sidebar = () => {
           >
             <div className="relative mx-auto lg:mx-0">
               <img
-                src={user.profilePic || "/avatar.png"}
-                alt={user.name}
+                src={user.profilepic || "/avatar.png"}
+                alt={user.fullname}
                 className="size-12 object-cover rounded-full"
               />
-              {onlineUsers.has(user._id) && (
+              {/* {onlineUsers.has(user._id) && (
                 <span
                   className="absolute bottom-0 right-0 size-3 bg-green-500
                   rounded-full ring-2 ring-zinc-900"
                 />
-              )}
+              )} */}
             </div>
 
             {/* User info - only visible on larger screens */}
             <div className="hidden lg:block text-left min-w-0">
-              <div className="font-medium truncate">{user.fullName}</div>
+              <div className="font-medium truncate">{user.fullname}</div>
               <div className="text-sm text-zinc-400">
                 {onlineUsers.includes(user._id) ? "Online" : "Offline"}
               </div>
