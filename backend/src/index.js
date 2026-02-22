@@ -25,7 +25,7 @@ app.use("/api/auth",authroutes)
 app.use("/api/messages",messageroutes)
 if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join(__dirname,"../frontend/dist"))) //if in prod make this dist folder as static acid
-  app.get("*",(req,res)=>{
+  app.get("/*",(req,res)=>{
     res.sendFile(path.join(__dirname,"../frontend","dist","index.html"))
   })
 }
