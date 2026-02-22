@@ -22,10 +22,10 @@ const SettingsPage = () => {
                 <div className="px-4 py-3 border-b border-base-300 bg-base-100">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content font-medium">
-                      J
+                      SK
                     </div>
                     <div>
-                      <h3 className="font-medium text-sm">Sanjay</h3>
+                      <h3 className="font-medium text-sm">Sanjay Kumar</h3>
                       <p className="text-xs text-base-content/70">Online</p>
                     </div>
                   </div>
@@ -47,7 +47,7 @@ const SettingsPage = () => {
                         <p className="text-sm">{message.content}</p>
                         <p
                           className={`
-                            text-[10px] mt-1.5
+                            text-[10px] mt-1
                             ${message.isSent ? "text-primary-content/70" : "text-base-content/70"}
                           `}
                         >
@@ -65,11 +65,11 @@ const SettingsPage = () => {
                       type="text"
                       className="input input-bordered flex-1 text-sm h-10"
                       placeholder="Type a message..."
-                      value="This is a Demo"
+                      value="Type a message..."
                       readOnly
                     />
                     <button className="btn btn-primary h-10 min-h-0">
-                      <Send size={18} />
+                      <Send size={20} />
                     </button>
                   </div>
                 </div>

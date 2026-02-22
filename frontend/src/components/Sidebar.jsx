@@ -9,7 +9,7 @@ import useAuthStore from "../store/useAuthStore";
 const Sidebar = () => {
   const { getUsers, users, selectedUser, setSelectedUser, isUsersLoading } =
     useChatStore();
-  // Initialize as an array
+  
   const { onlineUsers } = useAuthStore();
 
   const [showOnlineOnly, setShowOnlineOnly] = useState(false);
@@ -22,7 +22,7 @@ const Sidebar = () => {
     ? users.filter((user) => onlineUsers.includes(user._id))
     : users;
 
-  // Show skeleton WHILE loading
+  // Show skeleton While loading
   if (isUsersLoading) return <SidebarSkeleton />;
 
   return (
@@ -35,13 +35,13 @@ const Sidebar = () => {
 
         </div>
 
-        <div className="mt-3 hidden lg:flex items-center gap-2">
+        <div className="mt-3 flex items-center gap-2">
           <label className="cursor-pointer flex items-center gap-2">
             <input
               type="checkbox"
               checked={showOnlineOnly}
               onChange={(e) => setShowOnlineOnly(e.target.checked)}
-              className="checkbox checkbox-sm"
+              className="checkbox-sm checkbox-primary"
             />
             <span className="text-sm">Show online only</span>
           </label>

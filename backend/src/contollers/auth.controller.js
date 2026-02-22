@@ -30,6 +30,7 @@ export const signup = async(req,res)=>{
                 email:newUser.email,
                 fullname:newUser.fullname,
                 profilepic:newUser.profilepic,
+                createdAt: newUser.createdAt,
 
         })}
         else{
@@ -59,6 +60,7 @@ export const login = async(req,res)=>{
             email:user.email,
             fullname:user.fullname,
             profilepic:user.profilepic,
+            createdAt: user.createdAt,
         })
 }
 
@@ -97,7 +99,8 @@ export const checkAuth = (req,res)=>{
         res.status(200).json({_id: req.user._id,
     fullname: req.user.fullname,
     email: req.user.email,
-    profilepic: req.user.profilepic})
+    profilepic: req.user.profilepic,
+    createdAt: req.user.createdAt,})
     }
     catch(err){
         console.log("Error in checkauth controller",err.message);

@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken"
 import User from "../models/user.model.js"
- const protectedRoute = async(req,res,next)=>{    //only check if user is logged in
+ const protectedRoute = async(req,res,next)=>{    //only check if user is logged in on every req to keep it protected
     try{
         const token = req.cookies.jwt
         if(!token){
