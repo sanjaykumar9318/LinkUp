@@ -67,23 +67,6 @@ LinkUp is a full-stack real-time chat application that allows users to communica
 
 ---
 
-# 📸 Screenshots
-
-> Add screenshots here
-
-```
-Login Page
-
-Home Page
-
-Chat Window
-
-Online Users
-
-Mobile View
-```
-
----
 
 # ⚙ Installation
 
@@ -156,9 +139,7 @@ PORT=
 
 📧 sanjayswiz26@gmail.com
 
-🔗 LinkedIn: https://linkedin.com/in/your-profile
-
-💻 GitHub: https://github.com/your-github
+🔗 LinkedIn: https://www.linkedin.com/in/sanjay-kumar-5560672b8/
 
 ---
 
