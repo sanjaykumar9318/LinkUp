@@ -35,11 +35,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="h-screen grid lg:grid-cols-2 bg-base-100 text-base-content">
-      {/* LEFT: LOGIN FORM */}
+    <div className="h-screen grid lg:grid-cols-2 bg-base-100 text-base-content"> 
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
-          {/* HEADER */}
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -51,10 +49,7 @@ const LoginPage = () => {
               </p>
             </div>
           </div>
-
-          {/* FORM */}
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* EMAIL */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-medium text-gray-300">
@@ -76,8 +71,6 @@ const LoginPage = () => {
                 />
               </div>
             </div>
-
-            {/* PASSWORD */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-medium text-gray-300">
@@ -140,7 +133,6 @@ const LoginPage = () => {
         </div>
       </div>
 
-      {/* RIGHT: IMAGE / PATTERN */}
       <AuthImagePattern
         title="Welcome back!"
         subtitle="Sign in to continue your conversations and catch up with your messages."

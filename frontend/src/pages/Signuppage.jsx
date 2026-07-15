@@ -48,11 +48,10 @@ const Signuppage = () => {
   };
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2">
-      {/* LEFT: FORM */}
+    // gridcols2 here seprate page to 2 equal half
+    <div className="min-h-screen grid lg:grid-cols-2"> 
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
-          {/* HEADER */}
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2">
               <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -65,10 +64,7 @@ const Signuppage = () => {
               </p>
             </div>
           </div>
-
-          {/* FORM */}
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* FULL NAME */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-medium">Full Name</span>
@@ -80,7 +76,7 @@ const Signuppage = () => {
                 <input
                   type="text"
                   className="input input-bordered w-full pl-10 bg-transparent"
-                  placeholder="John Doe"
+                  placeholder="Sanjay"
                   value={formData.fullname}
                   onChange={(e) =>
                     setFormData({ ...formData, fullname: e.target.value })
@@ -89,7 +85,6 @@ const Signuppage = () => {
               </div>
             </div>
 
-            {/* EMAIL */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-medium">Email</span>
@@ -109,8 +104,6 @@ const Signuppage = () => {
                 />
               </div>
             </div>
-
-            {/* PASSWORD */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-medium">Password</span>
@@ -142,7 +135,6 @@ const Signuppage = () => {
               </div>
             </div>
 
-            {/* SUBMIT */}
             <button
               type="submit"
               className="btn btn-primary w-full"
@@ -159,7 +151,6 @@ const Signuppage = () => {
             </button>
           </form>
 
-          {/* FOOTER */}
           <div className="text-center">
             <p className="text-base-content/60">
               Already have an account?{" "}

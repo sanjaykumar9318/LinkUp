@@ -98,13 +98,15 @@ const MessageInput = () => {
             onClick={() => fileInputRef.current?.click()}
           >
             <Image size={20} />
+            {/* image here is lucide react */}
           </button>
 
         </div>
         <button
           type="submit"
           className="btn btn-sm btn-circle"
-          disabled={!text.trim() && !imagePreview}
+          // to show btn like dull because no msg in box
+          disabled={!text.trim() && !imagePreview} 
         >
           <Send size={22} />
         </button>

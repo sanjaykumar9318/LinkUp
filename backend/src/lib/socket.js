@@ -11,6 +11,7 @@ const io=new Server(server,{
 })
 export function getReceiverSocketId(userId){
     return userSocketMap[userId];
+    // used to send txt in realtime send emssage controller
 }
 
 const userSocketMap={};

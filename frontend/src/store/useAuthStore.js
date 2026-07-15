@@ -2,7 +2,7 @@ import {create} from "zustand"
 import axiosInstance from "../lib/axios"
 import toast from "react-hot-toast"
 import { io } from 'socket.io-client';
-const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:5001/api" : "/";
+const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:5001" : "/";
 
 
 
@@ -20,6 +20,7 @@ const useAuthStore = create((set,get)=>({
     const res = await axiosInstance.get("/auth/check");
     set({ authUser: res.data });
     get().connectSocket()
+    // here we connect we no this runs when we open app as we a useeffect in app.jsx
     } catch (e) {
     console.log("Error in auth", e);
      } finally {
@@ -27,7 +28,7 @@ const useAuthStore = create((set,get)=>({
     }
     },
     signup:async(data)=>{
-        set({isSigningUp:true})
+        set({isSigningUp:true}) 
         try{
             const res=await axiosInstance.post("/auth/signup",data)
             set({authUser:res.data})
@@ -84,9 +85,9 @@ const useAuthStore = create((set,get)=>({
     }
     },
     connectSocket: ()=>{
+      console.log("connectSocket called"); 
       const { authUser } = get();
-    if (!authUser || get().socket?.connected) return;
-
+    if (!authUser || get().socket?.connected) return;     // this is usefull when line 90 runs that return socket obj that as conencted var
     const socket = io(BASE_URL, {
       query: { userId: authUser._id },
         withCredentials: true,

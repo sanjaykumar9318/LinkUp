@@ -29,7 +29,6 @@ const ProfilePage = () => {
       <div className="max-w-2xl mx-auto p-4 py-8">
         <div className="bg-base-300 rounded-xl p-6 space-y-8">
 
-          {/* Header */}
           <div className="text-center">
             <h1 className="text-2xl font-semibold text-base-content">
               Profile
@@ -39,7 +38,6 @@ const ProfilePage = () => {
             </p>
           </div>
 
-          {/* Profile Image */}
           <div className="flex flex-col items-center gap-4">
             <div className="relative">
               <img
@@ -75,8 +73,6 @@ const ProfilePage = () => {
                 : "Click the camera icon to update your photo"}
             </p>
           </div>
-
-          {/* Profile Info */}
           <div className="space-y-6">
             <div className="space-y-1.5">
               <div className="text-sm text-base-content/60 flex items-center gap-2">
@@ -98,8 +94,6 @@ const ProfilePage = () => {
               </p>
             </div>
           </div>
-
-          {/* Account Info */}
           <div className="mt-6 bg-base-200 rounded-xl p-6">
             <h2 className="text-lg font-medium text-base-content mb-4">
               Account Information

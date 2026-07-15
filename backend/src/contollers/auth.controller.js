@@ -45,6 +45,7 @@ export const signup = async(req,res)=>{
 
 export const login = async(req,res)=>{
     const {email,password} = req.body
+    try{
     const user=await User.findOne({email});
         if(!user){
             return res.status(400).json({message:"User not found"});
@@ -61,7 +62,11 @@ export const login = async(req,res)=>{
             fullname:user.fullname,
             profilepic:user.profilepic,
             createdAt: user.createdAt,
-        })
+        })}
+        catch(err){
+            console.log("error in login controller",err.message)
+            res.status(500).json({message:"internal server error"});
+    }
 }
 
 export const logout = (req,res)=>{
