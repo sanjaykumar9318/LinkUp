@@ -73,7 +73,7 @@ LinkUp is a full-stack real-time chat application that allows users to communica
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/LinkUp.git
+https://github.com/sanjaykumar9318/LinkUp.git
 ```
 
 Install dependencies
